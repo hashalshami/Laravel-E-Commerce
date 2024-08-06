@@ -1,6 +1,6 @@
 <div  
     class="relative w-72 border border-gray-300 shadow-[9px_10px_18px_rgba(0,0,0,0.3)] rounded-xl bg-white cursor-pointer m-4" >
-    <button  wire:click="toggleFavorite"
+    <button type="button"  wire:click="toggleFavorite"
         class="absolute right-2 top-2 size-9 p-1.5 inline-flex items-center justify-center  rounded-full bg-zinc-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" @class([
             'h-full',
@@ -15,21 +15,21 @@
     </button>
 
     <div
-        class="bg-slate-300 absolute w-8 px-1 py-2  top-2 left-2 flex flex-col items-center gap-2 max-h-52 flex-nowrap ">
+        class="bg-slate-100 absolute w-8 px-1 py-2  top-2 left-2 flex flex-col items-center gap-2 max-h-52 flex-nowrap ">
 
         @foreach ($images as $img)
             @if ($img->path == $path)
-                <button class="duration-75 w-6 h-10 rounded-2xl"
+                <button class="duration-75 w-6 h-6 rounded-2xl"
                     style="background:linear-gradient({{ $img->color }}80,{{ $img->color }});"></button>
             @else
-                <button class=" duration-75 size-6 rounded-full" wire:click="toggleImage('{{ $img->path }}')"
+                <button class=" duration-75 size-5 rounded-full" wire:click="toggleImage('{{ $img->path }}')"
                     style="background:linear-gradient({{ $img->color }}80,{{ $img->color }});"></button>
             @endif
         @endforeach
     </div>
-    <a href="{{ route('pro.show', $product->id) }}">
-        <div class="w-full p-2">
-            <img class="w-full transition-all duration-100 rounded-2xl  " src="{{ asset('product/' . $path) }}"
+    <a href="{{ route('pro.show', $product->id) }}" class="block w-full ">
+        <div class="w-full overflow-hidden ">
+            <img class="w-full transition-all duration-100 rounded-t-xl   " src="{{ asset('product/' . $path) }}"
                 alt="{{ $product->name }}">
         </div>
 
