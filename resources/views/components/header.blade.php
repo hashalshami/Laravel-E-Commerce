@@ -50,11 +50,11 @@
                              <div class="block px-4 py-2 text-xs text-gray-400 ">
                                  إدارة الحساب
                              </div>
-                             <x-app.dropdown-link :href="route('profile.edit')">
+                             <x-app.dropdown-link  wire:navigate :href="route('profile.edit')">
                                  <x-icons.profile class="fill-current w-4 ms-1.5 me-1" />
                                  الملف الشخصي
                              </x-app.dropdown-link>
-                             <x-app.dropdown-link :href="route('favorite')">
+                             <x-app.dropdown-link  wire:navigate :href="route('favorite')">
                                  <x-icons.heart-user-menu class="fill-current w-4 ms-1.5 me-1" />
                                  <span>المفضلة</span>
                              </x-app.dropdown-link>
@@ -64,7 +64,7 @@
                              <form method="POST" action="{{ route('logout') }}">
                                  @csrf
 
-                                 <x-app.dropdown-link :href="route('logout')"
+                                 <x-app.dropdown-link   wire:navigate :href="route('logout')"
                                      onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                      <x-icons.logout class=" fill-rose-700 w-4 me-1.5 ms-1" />
@@ -80,7 +80,7 @@
                      </span>
                      <div class="flex gap-x-2">
                          <span class="relative inline-flex font-serif">
-                             <a href="{{ route('login') }}"
+                             <a href="{{ route('login') }}"  wire:navigate
                                  class="inline-flex items-center px-3 py-1  leading-6 text-sm shadow rounded-md text-white font-semibold bg-slate-800 transition ease-in-out duration-150 cursor-pointer ring-1 ring-slate-900/10 ">
                                  <span> تسجيل الدخول</span>
                              </a>
@@ -99,7 +99,7 @@
              <div class="flex gap-x-4 items-stretch px-3  flex-grow">
                  <livewire:search-bar />
 
-                 <x-app.nav-link :href="route('home')" :active="request()->routeIs('home')" class=" px-3">
+                 <x-app.nav-link  wire:navigate :href="route('home')" :active="request()->routeIs('home')" class=" px-3">
                      <x-icons.home class="h-6" />
                  </x-app.nav-link>
                  <div class="h-full">
@@ -114,14 +114,14 @@
              <div class="flex h-full">
                  <!-- Logo -->
                  <div class="hidden space-x-8 sm:-my-px sm:me-10 sm:flex">
-                     <x-app.nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                     <x-app.nav-link  wire:navigate :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                          لوحة التحكم
                      </x-app.nav-link>
 
                  </div>
                  <div class=" space-x-8 sm:-my-px sm:me-10 flex">
 
-                     <x-app.nav-link :href="route('cart')" :active="request()->routeIs('cart')">
+                     <x-app.nav-link  wire:navigate :href="route('cart')" :active="request()->routeIs('cart')">
                          <livewire:cart-count />
                      </x-app.nav-link>
                  </div>

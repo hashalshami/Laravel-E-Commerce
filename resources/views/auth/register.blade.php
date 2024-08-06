@@ -1,11 +1,11 @@
 <x-guest-layout title="إنشاء حساب">
     <x-app.auth-session-status class="mb-4" :status="session('status')" />
     <x-slot name="tabs">
-        <a href="{{ route('login') }}"
+        <a href="{{ route('login') }}"  wire:navigate
             class="flex-1 py-2 whitespace-nowrap text-center px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
             تسجيل الدخول
         </a>
-        <a href="#"
+        <a href="#"  wire:navigate
             class="flex-1 py-2 bg-blue-600 text-white whitespace-nowrap text-center px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
             إنشاء حساب
         </a>

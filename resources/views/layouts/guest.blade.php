@@ -19,7 +19,7 @@
 <body class="bg-neutral-200 font-display antialiased ">
     <div class="min-h-screen flex flex-col sm:justify-start items-center py-4 ">
         <div class="mb-4 flex justify-center items-center    ">
-            <a href="/" class="py-2 px-4 h-14 inline-block bg-white rounded-lg shadow-md">
+            <a href="/"  wire:navigate class="py-2 px-4 h-14 inline-block bg-white rounded-lg shadow-md">
                 <x-app.application-logo class="h-full fill-current text-gray-500" />
             </a>
         </div>

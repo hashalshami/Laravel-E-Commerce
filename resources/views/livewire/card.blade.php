@@ -27,7 +27,7 @@
             @endif
         @endforeach
     </div>
-    <a href="{{ route('pro.show', $product->id) }}" class="block w-full ">
+    <a href="{{ route('pro.show', $product->id) }}" class="block w-full " wire:navigate>
         <div class="w-full overflow-hidden ">
             <img class="w-full transition-all duration-100 rounded-t-xl   " src="{{ asset('product/' . $path) }}"
                 alt="{{ $product->name }}">
