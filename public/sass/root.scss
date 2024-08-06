@@ -1,0 +1,56 @@
+@import 'variables';
+
+:root {
+    --body-bg-color: hsl(0, 0%, 90%);
+    --header-height: 93px;
+    --header-height-active: 87px;
+    --header-container-height: 60px;
+    --clr-navy-blue:$clr-navy-blue;
+}
+.rtl{
+  direction: rtl!important;
+}
+.ltr{
+    direction: ltr!important;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  direction: rtl!important;
+}
+body{
+  background-color:$bg-body;
+}
+
+button,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+  outline: none;
+}
+
+
+
+
+
+/* // 550 768 992 1200 */
+@media (min-width: 550px) {
+ 
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    html {
+        --header-height: 123px;
+        --header-height-active: 93px;
+    }
+}
+
+@media (min-width: 1200px) {}

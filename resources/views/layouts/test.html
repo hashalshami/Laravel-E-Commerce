@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body style="height: 2000px;" x-data="{ isVisible: true, lastScrollY: 0 }"
+      x-init="() => {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > lastScrollY) {
+            isVisible = false;
+          } else {
+            isVisible = true;
+          }
+          lastScrollY = window.scrollY;
+        });
+      }">
+  <nav x-bind:class="{ '-translate-y-16': !isVisible ,'translate-y-0': isVisible  }" class="sticky top-0 z-50 bg-gray-200 transition-transform duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="-me-2 flex items-center sm:hidden">
+          <button @click="open = ! open"
+                  class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+              <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hidden sm:flex sm:items-center sm:ms-6">
+          <span class=""></span>
+          <div class="flex gap-x-2">
+            <span class="relative inline-flex font-serif">
+              <a href="{{ route('login') }}"
+                 class="inline-flex items-center px-3 py-1 leading-6 text-sm shadow rounded-md text-white font-semibold bg-slate-800 transition ease-in-out duration-150 cursor-not-allowed ring-1 ring-slate-900/10">
+                <span>تسجيل الدخول</span>
+              </a>
+              <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex gap-x-4 items-stretch px-3 flex-grow">
+          <div class="h-full"></div>
+        </div>
+        <div class="flex h-full">
+          <div class="hidden space-x-8 sm:-my-px sm:me-10 sm:flex"></div>
+          <div class="space-x-8 sm:-my-px sm:me-10 flex"></div>
+          <div class="shrink-0 max-h-16 py-1 flex items-center">
+            <a href="/">
+              <x-app.application-logo class="h-9"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div :class="{ 'block': open, 'hidden': !open }" class="bg-white w-full sm:hidden">
+      <div class="pt-2 pb-3 space-y-1"></div>
+      <div class="pt-4 pb-1 border-t border-gray-200"></div>
+    </div>
+  </nav>
+
+  <div></div>
+</body>
+</html>

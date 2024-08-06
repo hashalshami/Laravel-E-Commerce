@@ -1,0 +1,103 @@
+
+#event-alert>div {
+  --bg-before: gray;
+  --h: 5px;
+  position: fixed;
+  top: 3px;
+  left: 10%;
+  padding: 22px 40px;
+  background-color: #088187;
+  background-color: var(--bg);
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  z-index: 10;
+  border-radius: 3px;
+  animation-name: eventAlert;
+  animation-duration: 0.4s;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+#event-alert>div.fav-added,
+#event-alert>div.addedToCart
+{
+  --bg-before: gray;
+  --bg-after: #4CAF50;
+  --bg: #0e634e;
+  /* --bg: #4CAF50; */
+}
+#event-alert>div.notAuth{
+  --bg-before: gray;
+  --bg:#1f2937;
+    --bg-after: #d60000;
+  color: #fff;
+  text-align: center;
+  right: 10%;
+}
+#event-alert>div.fav-removed
+,#event-alert>div.removeFromCart {
+  --bg-before: gray;
+  --bg-after: #d60000;
+  --bg: #991b1b;
+  /* --bg: #4CAF50; */
+}
+
+#event-alert>div::before {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: var(--h);
+  background-color: var(--bg-before);
+}
+
+#event-alert>div::after {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: 0;
+  /* background-color: inherit; */
+  /* opacity: 0.5; */
+  width: inherit;
+  background-color: var(--bg-after);
+  height: var(--h);
+  animation-name: barEvent;
+  animation-duration: 2.5s;
+}
+
+@keyframes barEvent {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+
+}
+
+@keyframes eventAlert {
+  0% {
+    transform: rotateZ(6deg);
+  }
+
+  25% {
+    transform: rotateZ(-6deg);
+  }
+
+  50% {
+    transform: rotateZ(6deg);
+  }
+
+  75% {
+    transform: rotateZ(-6deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}

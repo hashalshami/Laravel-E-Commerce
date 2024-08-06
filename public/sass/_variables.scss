@@ -1,0 +1,22 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$bg-body: hsl(0, 0%, 90%);
+$bg-form-card: hsl(0, 0%, 100%);
+$clr-navy-blue: rgb(31, 41, 55);
+
+
+@mixin size($wid, $hei: null) {
+  @if $hei == null {
+    width: $wid;
+    height: $wid;
+  } @else {
+    width: $wid;
+    height: $hei;
+  }
+}

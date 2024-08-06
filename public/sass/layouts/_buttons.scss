@@ -1,0 +1,40 @@
+button.normal ,.normal {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 15px 25px;
+    color: #DFF8C9;
+    background-color: #088187;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #DFF8C9;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #DFF8C9;
+    border-radius: 3px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.primary-btn{
+    display: inline-block;
+    color: rgb(255 255 255 /1);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(31 41 55 / 1);
+    border-radius: 0.375rem;
+    font-weight: 600;
+}
+
+
+.center-text {
+  text-align: center;
+}

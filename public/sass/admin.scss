@@ -1,0 +1,52 @@
+$wid:100px;
+$hei:37px;
+#menu-admin{
+     position: fixed;
+    bottom: 20px;
+    left: 20px;
+     z-index: 99;
+     width:$wid;
+    //  display: flex;
+    //  align-items: stretch;
+    //  justify-content: space-between;
+    //  flex-flow: column nowrap;
+    font-weight: bold;
+    color: #ffffff;   
+}
+#menu-admin .admin-link{
+    overflow-y: hidden;
+    height: 0;
+    transition:all 0.5s ease-out;
+    opacity: 0;
+
+}
+#menu-admin.active .admin-link{
+    height:110px;
+    opacity: 1;
+}
+#toggle-btn ,#menu-admin a{
+    display: block;
+    height: $hei;
+    width: $wid;
+    color: #fff;
+    line-height: $hei;
+    border-radius: 30px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+
+
+}
+
+#menu-admin a{
+    background-color: #088187;
+    margin-block: 10px;
+}
+#menu-admin #toggle-btn {
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: #0f1730;
+    text-align: center;
+    width: $wid;
+}
+
